@@ -60,16 +60,18 @@ for i in range(num_iterations):
         # After every junior has been selected, start taking a third freshman
         selected_members.extend([member for member in members_data if member['Grade'] == 'Freshman'][i * 3 % 13:i * 3 % 13 + 3])
 
-    # Select 1 junior
-    selected_members.append([member for member in members_data if member['Grade'] == 'Junior'][junior_index])
+    # Select 1 junior if available
+    if junior_index < len([member for member in members_data if member['Grade'] == 'Junior']):
+        selected_members.append([member for member in members_data if member['Grade'] == 'Junior'][junior_index])
 
     # Update the counters for each selected member
     for selected_member_list in selected_members:
         for selected_member in selected_member_list:
             member_counter[selected_member['Name']] += 1
 
-    # Increment the junior index
-    junior_index += 1
+    # Increment the junior index only if a junior was selected
+    if junior_index < len([member for member in members_data if member['Grade'] == 'Junior']):
+        junior_index += 1
 
     # Display the selected members for each iteration
     st.write(f"Iteration {i + 1}:\n{selected_members}")
