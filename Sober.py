@@ -46,8 +46,9 @@ member_counter = {member['Name']: 0 for member in members_data}
 # Display the title
 st.title("Member Selection Events")
 
-# Initialize indices for tracking the position in the junior list
+# Initialize indices for tracking the position in the junior and sophomore lists
 junior_index = 0
+sophomore_index = 0
 
 # Perform the selection process for a specified number of iterations
 for i in range(num_iterations):
@@ -67,7 +68,11 @@ for i in range(num_iterations):
     # Update the counters for each selected member
     for selected_member_list in selected_members:
         for selected_member in selected_member_list:
-            member_counter[selected_member['Name']] += 1
+            member_name = selected_member['Name']
+            if member_name in member_counter:
+                member_counter[member_name] += 1
+            else:
+                print(f"Error updating counter for {member_name}. Member not found in the counter dictionary.")
 
     # Increment the junior index only if a junior was selected
     if junior_index < len([member for member in members_data if member['Grade'] == 'Junior']):
