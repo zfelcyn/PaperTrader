@@ -1,4 +1,3 @@
-import pandas as pd
 import random
 import streamlit as st
 
@@ -39,9 +38,6 @@ members_data = [
     {'Name': 'Karl', 'Grade': 'Junior'}
 ]
 
-# Create a DataFrame from the member data
-df = pd.DataFrame(members_data)
-
 # Number of times to run the selection process
 num_iterations = 25
 
@@ -53,19 +49,19 @@ st.title("Member Selection Events")
 
 # Perform the selection process for a specified number of iterations
 for i in range(num_iterations):
-    selected_members = pd.DataFrame()
+    selected_members = []
 
     # Select at least 2 freshmen
-    selected_freshmen = df[df['Grade'] == 'Freshman'].sample(2)
-    selected_members = selected_members.append(selected_freshmen)
+    selected_freshmen = random.sample([member for member in members_data if member['Grade'] == 'Freshman'], 2)
+    selected_members.extend(selected_freshmen)
 
     # Select 1 sophomore and 1 junior
-    selected_members = selected_members.append(df[df['Grade'] == 'Sophomore'].sample(1))
-    selected_members = selected_members.append(df[df['Grade'] == 'Junior'].sample(1))
+    selected_members.append(random.choice([member for member in members_data if member['Grade'] == 'Sophomore']))
+    selected_members.append(random.choice([member for member in members_data if member['Grade'] == 'Junior']))
 
     # Update the counter for each selected member
-    for index, row in selected_members.iterrows():
-        member_counter[row['Name']] += 1
+    for selected_member in selected_members:
+        member_counter[selected_member['Name']] += 1
 
     # Display the selected members for each iteration
     st.write(f"Iteration {i + 1}:\n{selected_members}")
