@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+import streamlit as st
 
 # Member data
 members_data = [
@@ -47,25 +48,28 @@ num_iterations = 25
 # Initialize a counter for each member
 member_counter = {member['Name']: 0 for member in members_data}
 
+# Display the title
+st.title("Member Selection Events")
+
 # Perform the selection process for a specified number of iterations
-for _ in range(num_iterations):
+for i in range(num_iterations):
     selected_members = pd.DataFrame()
-    
+
     # Select at least 2 freshmen
     selected_members = selected_members.append(df[df['Grade'] == 'Freshman'].sample(2))
 
     # Select 1 sophomore and 1 junior
     selected_members = selected_members.append(df[df['Grade'] == 'Sophomore'].sample(1))
     selected_members = selected_members.append(df[df['Grade'] == 'Junior'].sample(1))
-    
+
     # Update the counter for each selected member
     for index, row in selected_members.iterrows():
         member_counter[row['Name']] += 1
 
-    # Print the selected members for each iteration
-    print(f"Iteration {_ + 1}:\n{selected_members}\n")
+    # Display the selected members for each iteration
+    st.write(f"Iteration {i + 1}:\n{selected_members}")
 
 # Display the final member selection statistics
-print("Member Selection Statistics:")
+st.write("\nMember Selection Statistics:")
 for member, count in member_counter.items():
-    print(f"{member}: {count} times")
+    st.write(f"{member}: {count} times")
