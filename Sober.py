@@ -1,4 +1,3 @@
-import random
 import streamlit as st
 
 # Member data
@@ -51,17 +50,20 @@ st.title("Member Selection Events")
 for i in range(num_iterations):
     selected_members = []
 
-    # Select at least 2 freshmen
-    selected_freshmen = random.sample([member for member in members_data if member['Grade'] == 'Freshman'], 2)
-    selected_members.extend(selected_freshmen)
+    # Select 2 freshmen until every member of the junior list has been selected
+    if i < len([member for member in members_data if member['Grade'] == 'Junior']):
+        selected_members.extend([member for member in members_data if member['Grade'] == 'Freshman'][i * 2 % 13:i * 2 % 13 + 2])
+    else:
+        # After every junior has been selected, start taking a third freshman
+        selected_members.extend([member for member in members_data if member['Grade'] == 'Freshman'][i * 3 % 13:i * 3 % 13 + 3])
 
-    # Select 1 sophomore and 1 junior
-    selected_members.append(random.choice([member for member in members_data if member['Grade'] == 'Sophomore']))
-    selected_members.append(random.choice([member for member in members_data if member['Grade'] == 'Junior']))
+    # Select 1 junior
+    selected_members.append([member for member in members_data if member['Grade'] == 'Junior'][i % 5])
 
-    # Update the counter for each selected member
-    for selected_member in selected_members:
-        member_counter[selected_member['Name']] += 1
+    # Update the counters for each selected member
+    for selected_member_list in selected_members:
+        for selected_member in selected_member_list:
+            member_counter[selected_member['Name']] += 1
 
     # Display the selected members for each iteration
     st.write(f"Iteration {i + 1}:\n{selected_members}")
