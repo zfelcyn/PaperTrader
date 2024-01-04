@@ -68,11 +68,11 @@ for i in range(num_iterations):
     # Update the counters for each selected member
     for selected_member_list in selected_members:
         for selected_member in selected_member_list:
-            member_name = selected_member['Name']
-            if member_name in member_counter:
+            try:
+                member_name = selected_member['Name']
                 member_counter[member_name] += 1
-            else:
-                print(f"Error updating counter for {member_name}. Member not found in the counter dictionary.")
+            except KeyError:
+                print(f"Error updating counter. Member not found in the counter dictionary.")
 
     # Increment the junior index only if a junior was selected
     if junior_index < len([member for member in members_data if member['Grade'] == 'Junior']):
