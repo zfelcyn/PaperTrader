@@ -46,24 +46,30 @@ member_counter = {member['Name']: 0 for member in members_data}
 # Display the title
 st.title("Member Selection Events")
 
+# Initialize indices for tracking the position in the junior list
+junior_index = 0
+
 # Perform the selection process for a specified number of iterations
 for i in range(num_iterations):
     selected_members = []
 
     # Select 2 freshmen until every member of the junior list has been selected
-    if i < len([member for member in members_data if member['Grade'] == 'Junior']):
+    if junior_index < len([member for member in members_data if member['Grade'] == 'Junior']):
         selected_members.extend([member for member in members_data if member['Grade'] == 'Freshman'][i * 2 % 13:i * 2 % 13 + 2])
     else:
         # After every junior has been selected, start taking a third freshman
         selected_members.extend([member for member in members_data if member['Grade'] == 'Freshman'][i * 3 % 13:i * 3 % 13 + 3])
 
     # Select 1 junior
-    selected_members.append([member for member in members_data if member['Grade'] == 'Junior'][i % 5])
+    selected_members.append([member for member in members_data if member['Grade'] == 'Junior'][junior_index])
 
     # Update the counters for each selected member
     for selected_member_list in selected_members:
         for selected_member in selected_member_list:
             member_counter[selected_member['Name']] += 1
+
+    # Increment the junior index
+    junior_index += 1
 
     # Display the selected members for each iteration
     st.write(f"Iteration {i + 1}:\n{selected_members}")
