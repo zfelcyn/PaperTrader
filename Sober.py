@@ -41,7 +41,7 @@ members_data = [
 # Create a DataFrame from the member data
 df = pd.DataFrame(members_data)
 
-# Number of times to run the selection process (adjusted for around 100 events)
+# Number of times to run the selection process
 num_iterations = 25
 
 # Initialize a counter for each member
@@ -62,12 +62,10 @@ for _ in range(num_iterations):
     for index, row in selected_members.iterrows():
         member_counter[row['Name']] += 1
 
-# Save the selected members to an Excel file in the working directory
-selected_members.to_excel('member_selection.xlsx', index=False)
+    # Print the selected members for each iteration
+    print(f"Iteration {_ + 1}:\n{selected_members}\n")
 
 # Display the final member selection statistics
 print("Member Selection Statistics:")
 for member, count in member_counter.items():
     print(f"{member}: {count} times")
-
-print("\nExcel file 'member_selection.xlsx' saved in the working directory.")
