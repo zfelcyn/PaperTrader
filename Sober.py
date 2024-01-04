@@ -56,7 +56,8 @@ for i in range(num_iterations):
     selected_members = pd.DataFrame()
 
     # Select at least 2 freshmen
-    selected_members = selected_members.append(df[df['Grade'] == 'Freshman'].sample(2))
+    selected_freshmen = df[df['Grade'] == 'Freshman'].sample(2)
+    selected_members = selected_members.append(selected_freshmen)
 
     # Select 1 sophomore and 1 junior
     selected_members = selected_members.append(df[df['Grade'] == 'Sophomore'].sample(1))
