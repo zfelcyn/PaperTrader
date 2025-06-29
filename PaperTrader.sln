@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperTrader.Core", "PaperTrader.Core\PaperTrader.Core.csproj", "{23AAF4F2-D7B1-4481-B042-E09C42D351BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperTrader.Services", "PaperTrader.Services\PaperTrader.Services.csproj", "{2BED9308-3278-4BF1-8511-CB110B92FFC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaperTrader.API", "PaperTrader.API\PaperTrader.API.csproj", "{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|x64.Build.0 = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Debug|x86.Build.0 = Debug|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|x64.ActiveCfg = Release|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|x64.Build.0 = Release|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|x86.ActiveCfg = Release|Any CPU
+		{23AAF4F2-D7B1-4481-B042-E09C42D351BE}.Release|x86.Build.0 = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|x64.Build.0 = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Debug|x86.Build.0 = Debug|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|x64.ActiveCfg = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|x64.Build.0 = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|x86.ActiveCfg = Release|Any CPU
+		{2BED9308-3278-4BF1-8511-CB110B92FFC6}.Release|x86.Build.0 = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|x64.Build.0 = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Debug|x86.Build.0 = Debug|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|x64.ActiveCfg = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|x64.Build.0 = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|x86.ActiveCfg = Release|Any CPU
+		{EEC8587F-BA20-43B4-9DD3-513E91EB5F86}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
